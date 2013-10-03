@@ -7,12 +7,13 @@ int main()
 {
     int first = 1;
 
-    ucontext_t ctx, ctx_2;
+    ucontext_t ctx;
     ucontext_t *from, *to;
     from = &ctx;
 #ifdef SWAP_SAME_CONTEXT
-    to = &ctx; (void)ctx_2;
+    to = &ctx;
 #else
+    ucontext_t ctx_2;
     to = &ctx_2;
 #endif
 
